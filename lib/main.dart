@@ -1,6 +1,8 @@
-import 'package:firechat/pagez/login_page.dart';
 import 'package:firechat/theme/light_mode.dart';
 import 'package:flutter/material.dart';
+
+//instead of separate imports for login and register
+import 'package:firechat/app_components/auth/lor_or_reg.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +15,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      //logic we still don't know if user is logged
+      home: LogOrReg(),
       theme: lightMode,
     );
   }

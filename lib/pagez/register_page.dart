@@ -2,18 +2,17 @@ import 'package:firechat/app_components/widgets/custom_button.dart';
 import 'package:firechat/app_components/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  //email & psw controllrs
-
+class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
-//tap to register page
+  final TextEditingController _confirmController = TextEditingController();
+//
+//tap to login page
   final void Function()? onTap;
-  LoginPage({super.key, required this.onTap});
 
-  //logIn method
-  void logIn() {}
+  RegisterPage({super.key, required this.onTap});
+  //register method
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +24,13 @@ class LoginPage extends StatelessWidget {
             children: [
               //TODO:Insert logo here:
               Icon(
-                Icons.message_rounded,
+                Icons.messenger_sharp,
                 size: 69,
                 color: Theme.of(context).colorScheme.primary,
               ),
               //TODO:insert welcome message
               Text(
-                "Welcome, you'll regret this",
+                "Let's make your user account",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 18,
@@ -52,26 +51,33 @@ class LoginPage extends StatelessWidget {
                 controller: _passwordController,
               ),
               const SizedBox(height: 25),
-              //TODO:login button
+              //TODO:confirmpassword textfield
+              MyCustomTextField(
+                hintText: "Confirm your password 😁 ",
+                obscureText: true, //won't show psw
+                controller: _confirmController,
+              ),
+              //TODO:register button
               MyCustomButton(
-                text: "Log In",
-                onTap: logIn,
+                text: "Register",
+                onTap: register,
               ),
               //TODO: register buttom
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Not our user?",
+                    "Already have an account?",
                     style:
                         TextStyle(color: Theme.of(context).colorScheme.primary),
                   ),
                   GestureDetector(
                     onTap: onTap,
                     child: Text(
-                      " Register now!",
+                      " Login now!",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   )
@@ -82,3 +88,5 @@ class LoginPage extends StatelessWidget {
         ));
   }
 }
+
+class _passwordController {}
