@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firechat/app_components/auth/auth_user_gate.dart';
 import 'package:firechat/firebase_options.dart';
 import 'package:firechat/theme/light_mode.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //logic we still don't know if user is logged
-      home: LogOrReg(),
+      home: const AuthUserGate(),
       theme: lightMode,
     );
   }

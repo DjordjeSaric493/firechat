@@ -1,3 +1,4 @@
+import 'package:firechat/app_components/auth/auth_user_service.dart';
 import 'package:firechat/app_components/widgets/custom_button.dart';
 import 'package:firechat/app_components/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,22 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key, required this.onTap});
 
   //logIn method
-  void logIn() {}
+  void logIn(BuildContext context) async {
+    //firebase auth service
+    final authService = AuthService();
+
+    try {
+      await authService.signInWEmailPassword(
+          _emailController.text, _passwordController.text);
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +71,7 @@ class LoginPage extends StatelessWidget {
               //TODO:login button
               MyCustomButton(
                 text: "Log In",
-                onTap: logIn,
+                onTap: () => logIn(context),
               ),
               //TODO: register buttom
               Row(

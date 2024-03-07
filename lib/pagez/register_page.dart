@@ -1,3 +1,4 @@
+import 'package:firechat/app_components/auth/auth_user_service.dart';
 import 'package:firechat/app_components/widgets/custom_button.dart';
 import 'package:firechat/app_components/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,34 @@ class RegisterPage extends StatelessWidget {
 
   RegisterPage({super.key, required this.onTap});
   //register method
-  void register() {}
+  void register(BuildContext context) {
+    //get user auth service
+    final _authUser = AuthService();
+
+    //if passwords match -> create a new user
+    if (_passwordController.text == _confirmController.text) {
+      try {
+        _authUser.signUpWithEmailPassword(
+          _emailController.text,
+          _passwordController.text,
+        );
+      } on Exception catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match, u fool!"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +50,13 @@ class RegisterPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //TODO:Insert logo here:
+              //Insert logo here:
               Icon(
                 Icons.messenger_sharp,
                 size: 69,
                 color: Theme.of(context).colorScheme.primary,
               ),
-              //TODO:insert welcome message
+              //insert welcome message
               Text(
                 "Let's make your user account",
                 style: TextStyle(
@@ -37,32 +65,32 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              //TODO: insert email textField
+              // insert email textField
               MyCustomTextField(
                 hintText: "Type your email here, stupid",
-                obscureText: false, //want to show mail
+                obscureText: false, //want to show email
                 controller: _emailController,
               ),
               const SizedBox(height: 25),
-              //TODO:password textfield
+              //password textfield
               MyCustomTextField(
                 hintText: "Type your password here 🤡 ",
                 obscureText: true, //won't show psw
                 controller: _passwordController,
               ),
               const SizedBox(height: 25),
-              //TODO:confirmpassword textfield
+              //confirmpassword textfield
               MyCustomTextField(
                 hintText: "Confirm your password 😁 ",
                 obscureText: true, //won't show psw
                 controller: _confirmController,
               ),
-              //TODO:register button
+              //register button
               MyCustomButton(
                 text: "Register",
-                onTap: register,
+                onTap: () => register(context),
               ),
-              //TODO: register buttom
+              // register buttom
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -88,5 +116,3 @@ class RegisterPage extends StatelessWidget {
         ));
   }
 }
-
-class _passwordController {}
