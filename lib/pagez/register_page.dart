@@ -1,4 +1,4 @@
-import 'package:firechat/app_components/auth/auth_user_service.dart';
+import 'package:firechat/services/auth/auth_user_service.dart';
 import 'package:firechat/app_components/widgets/custom_button.dart';
 import 'package:firechat/app_components/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';

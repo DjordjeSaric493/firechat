@@ -1,11 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firechat/app_components/auth/auth_user_gate.dart';
+import 'package:firechat/services/auth/auth_user_gate.dart';
 import 'package:firechat/firebase_options.dart';
 import 'package:firechat/theme/light_mode.dart';
 import 'package:flutter/material.dart';
-
-//instead of separate imports for login and register
-import 'package:firechat/app_components/auth/lor_or_reg.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +18,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //logic we still don't know if user is logged
-      home: const AuthUserGate(),
+      home: AuthUserGate(),
       theme: lightMode,
     );
   }
