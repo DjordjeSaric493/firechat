@@ -1,4 +1,6 @@
+import 'package:firechat/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MySettingsPage extends StatelessWidget {
   const MySettingsPage({super.key});
@@ -6,7 +8,31 @@ class MySettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(
+        title: const Text("Settings"),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.deepPurple,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        margin: EdgeInsets.all(25),
+        padding: const EdgeInsets.all(15),
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          const Text("Dark mode"),
+          Switch(
+            value: Provider.of<ThemeProvider>(context, listen: false)
+                .isDarkModeEnabled,
+            onChanged: (value) =>
+                Provider.of<ThemeProvider>(context, listen: false)
+                    .switchTheme(),
+          ),
+        ]),
+      ),
     );
   }
 }
