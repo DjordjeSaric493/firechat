@@ -5,11 +5,22 @@ architecture pattern: Clean
 # Flutter chat app with a firebase as a backend service
 
 notes:
--user authentication via email and password
--reusing widgets 
--light and dark theme
--creating chat rooms for 2 users
+- user authentication via email and password
+- reusing widgets 
+- light and dark theme
+- creating chat rooms for 2 users
 
+#APP SCREENSHOTS
+my PC is crying every time when I run android emulator so I do to because it's so slow...
+![1-login](https://github.com/DjordjeSaric493/firechat/assets/57573848/75bbf319-c9a4-4c53-93e9-63cfcba8dd6c)
+![2-register](https://github.com/DjordjeSaric493/firechat/assets/57573848/22c0d7be-d13e-45df-b7e7-79c5055fab1c)
+![3-registerdemo](https://github.com/DjordjeSaric493/firechat/assets/57573848/c96636de-b8b0-46a8-821a-039142f260ab)
+![4-drawer](https://github.com/DjordjeSaric493/firechat/assets/57573848/9c69e567-555a-48dd-ada5-3ff277c42c59)
+My PC can be heard on 2 km radius when I run two emulators at the same time yaay
+![5-app preview](https://github.com/DjordjeSaric493/firechat/assets/57573848/364085e7-a432-48d5-bde9-831aab8935fa)
+
+messed up seech bubble color, will fix that in further commits
+![6-ap](https://github.com/DjordjeSaric493/firechat/assets/57573848/2fa953c0-cefd-45a0-bb6c-48d64c2d989a)
 TO BE IMPLEMENTED:
 - good looking UI, I'm planning to separate into colors.dart container and call from that
 - maaaybe push notifications
