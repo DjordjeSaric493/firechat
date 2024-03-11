@@ -19,8 +19,13 @@ my PC is crying every time when I run android emulator so I do to because it's s
 My PC can be heard on 2 km radius when I run two emulators at the same time yaay
 ![5-app preview](https://github.com/DjordjeSaric493/firechat/assets/57573848/364085e7-a432-48d5-bde9-831aab8935fa)
 
-messed up seech bubble color, will fix that in further commits
+~~messed up seech bubble color, will fix that in further commits~~ 
 ![6-ap](https://github.com/DjordjeSaric493/firechat/assets/57573848/2fa953c0-cefd-45a0-bb6c-48d64c2d989a)
+<span style="color:green; font-weight:bold;">IMPROVED TEXT COLORS LIGHT AND DARK MODE</span>
+![improved_ui](https://github.com/DjordjeSaric493/firechat/assets/57573848/c03abb77-a494-4558-81c2-e736fcdb3a57)
+
+
+
 TO BE IMPLEMENTED:
 - good looking UI, I'm planning to separate into colors.dart container and call from that
 - maaaybe push notifications
