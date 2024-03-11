@@ -19,10 +19,12 @@ class ChatBubble extends StatelessWidget {
       decoration: BoxDecoration(
         //change text speech bubbles according to selected theme
         color: isSender
-            ? (isDarkModeEnabled ? Colors.purple : Colors.grey.shade100)
+            ? (isDarkModeEnabled
+                ? Colors.purple
+                : const Color.fromARGB(255, 52, 239, 64))
             : (isDarkModeEnabled
-                ? Colors.blueGrey.shade600
-                : Colors.grey.shade100),
+                ? Colors.blue.shade800
+                : Color.fromARGB(255, 232, 237, 90)),
         borderRadius: BorderRadius.circular(14),
       ),
       padding: EdgeInsets.all(18),
@@ -30,7 +32,7 @@ class ChatBubble extends StatelessWidget {
       child: Text(
         message,
         //change text to adapt theme
-        style: TextStyle(color: isSender ? Colors.white30 : Colors.black26),
+        style: TextStyle(color: isSender ? Colors.white : Colors.black26),
       ),
     );
   }
