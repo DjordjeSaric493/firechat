@@ -12,6 +12,10 @@ notes:
 
 #APP SCREENSHOTS
 my PC is crying every time when I run android emulator so I do to because it's so slow...
+![ikonica](https://github.com/DjordjeSaric493/firechat/assets/57573848/23be73e0-0d5f-46f7-a051-118097f77b4d)
+Added icon ->link to used package [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)
+
+
 ![1-login](https://github.com/DjordjeSaric493/firechat/assets/57573848/75bbf319-c9a4-4c53-93e9-63cfcba8dd6c)
 ![2-register](https://github.com/DjordjeSaric493/firechat/assets/57573848/22c0d7be-d13e-45df-b7e7-79c5055fab1c)
 ![3-registerdemo](https://github.com/DjordjeSaric493/firechat/assets/57573848/c96636de-b8b0-46a8-821a-039142f260ab)
